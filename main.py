@@ -1,4 +1,4 @@
-from dotenv import load_dotenv
+from dotenv import load_dotenv #로컬 사이트 열 때 씀
 load_dotenv() #키를 괄호 안에 직접 넣어도 되지만 노출될 위험 존재재
 import streamlit as st
 from langchain.chat_models import ChatOpenAI
@@ -16,8 +16,9 @@ st.title("인공지능 시인")
 content=st.text_input("시의 주제를 제시해주세요")
 
 if st.button("시 작성 요청하기"):
-    result=chat_model.predict(content + "에 대한 시를 써줘")
-    st.write(result)
+    with st.spinner("시 작성 중..."): #지피티가 시 완성할 때까지 화면에 보여줌줌
+        result=chat_model.predict(content + "에 대한 시를 써줘")
+        st.write(result)
 
 
 # st.write("시의 주제는", title)
