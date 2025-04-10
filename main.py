@@ -1,11 +1,13 @@
-from dotenv import load_dotenv #로컬 사이트 열 때 씀
-load_dotenv() #키를 괄호 안에 직접 넣어도 되지만 노출될 위험 존재재
+from dotenv import load_dotenv 
+#로컬 사이트 열 때 씀
+load_dotenv()
+#키를 괄호 안에 직접 넣어도 되지만 노출될 위험 존재
 import streamlit as st
 from langchain.chat_models import ChatOpenAI
 
 # from langchain.llms import OpenAI
 # llm = OpenAI()
-# result=llm.predict("hi") #OpenAI은 위에 문장을 자동완성 해주는 기능능
+# result=llm.predict("hi") #OpenAI은 위에 문장을 자동완성 해주는 기능
 # print(result)
 
 
